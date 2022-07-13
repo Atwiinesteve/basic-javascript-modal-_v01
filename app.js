@@ -1,17 +1,9 @@
-const openBtn = document.querySelector('.open--modal');
-const closeBtn = document.querySelector('.close--modal');
-const overlay = document.querySelector('.modal--overlay');
+let questions = window.document.querySelectorAll('.content');
 
-openBtn.addEventListener('click', function() {
-  overlay.style.display = 'block';
-})
 
-closeBtn.addEventListener('click', function() {
-  overlay.style.display = 'none';
-})
 
-window.addEventListener('click', function(e) {
-  if(e.target === overlay) {
-    overlay.style.display = 'none';
-  }
-})
+for(let i = 0; i < questions.length; i++) {
+  questions[i].addEventListener('click', function() {
+    this.classList.toggle('active');
+  })
+}
